@@ -1,0 +1,39 @@
+project-root/public/favicon.ico
+project-root/public/images/
+project-root/src/app/(routes)/page.tsx
+project-root/src/components/
+project-root/src/components/ui/
+project-root/src/components/ui/button.tsx  # (shadcn component)
+project-root/src/components/custom/
+project-root/src/components/custom/header.tsx
+project-root/src/lib/
+project-root/src/lib/utils.ts
+project-root/src/lib/api-client.ts
+project-root/src/styles/
+project-root/src/styles/globals.css  # Tailwind CSS Integration
+project-root/src/types/  # TypeScript type definitions
+project-root/src/types/index.d.ts
+project-root/components.json
+project-root/eslintrc.json
+project-root/backend/
+project-root/backend/app/
+project-root/backend/app/__init__.py
+project-root/backend/app/routes/
+project-root/backend/app/routes/__init__.py
+project-root/backend/app/routes/auth.py
+project-root/backend/app/routes/api.py
+project-root/backend/app/models/
+project-root/backend/app/models/__init__.py
+project-root/backend/app/models/user.py
+project-root/backend/app/services/
+project-root/backend/app/services/__init__.py
+project-root/backend/app/utils/
+project-root/backend/app/utils/__init__.py
+project-root/backend/tests/
+project-root/backend/tests/__init__.py
+project-root/backend/config.py
+project-root/backend/run.py
+project-root/scripts/
+project-root/scripts/seed_database.py
+project-root/.env
+project-root/requirements.txt
