@@ -3,7 +3,7 @@ import { GradientChart } from "@/components/ui/gradient-chart";
 
 export default function Home() {
   return (
-    <div className="...">
+    <div className="..."> {/* The "..." here is a placeholder for Tailwind's utility classes */}
       <main className="...">
         <GradientChart />
       </main>
