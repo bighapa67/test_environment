@@ -109,7 +109,7 @@ export function GradientChart() {
             </ResponsiveContainer>
           </div>
           <div className="flex justify-center mt-6 space-x-4">
-            {['24h', '7d', '1m', '1y'].map((period) => (
+            {['1d', '1w', '1m', '3m', '6m','1y'].map((period) => (
               <button 
                 key={period}
                 className="px-4 py-2 text-sm bg-gray-700 text-blue-300 rounded-full transition-all duration-200 ease-in-out hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
