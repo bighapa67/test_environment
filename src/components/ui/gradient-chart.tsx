@@ -3,7 +3,7 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "./card"
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts'
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 // Mock data with more variation, including dips below 8,000
 const data = [
@@ -60,7 +60,13 @@ export function GradientChart() {
         <CardContent className="pt-6">
           <div className="h-[550px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5}}>
+              <AreaChart 
+                data={data.map(item => ({
+                  ...item,
+                  date: parseISO(item.date)
+                }))} 
+                margin={{ top: 5, right: 5, left: 5, bottom: 5}}
+              >
                 <defs>
                   <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
@@ -76,7 +82,7 @@ export function GradientChart() {
                 <XAxis 
                   dataKey="date" 
                   stroke="#718096"
-                  tickFormatter={(value) => format(new Date(value), 'yyyy-MM-dd')}
+                  tickFormatter={(value) => format(value, 'yyyy-MM-dd')}
                   angle={-45}
                   textAnchor="end"
                   height={60}
@@ -96,6 +102,7 @@ export function GradientChart() {
                   itemStyle={{ color: '#A0AEC0' }}
                   labelStyle={{ color: '#E2E8F0' }}
                   formatter={(value: number) => [`${value.toLocaleString()}`, 'Price']}
+                  labelFormatter={(label) => format(label, 'yyyy-MM-dd')}
                 />
                 <Area 
                   type="linear"
