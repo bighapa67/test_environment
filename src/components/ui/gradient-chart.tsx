@@ -52,7 +52,7 @@ export function GradientChart() {
   return (
     <div className="w-full p-4 bg-gray-900 min-h-screen flex items-center justify-center">
       <Card className="w-full max-w-5xl bg-gray-800 border-gray-700 shadow-lg">
-        <CardHeader className="border-b border-gray-700 py-3">
+        <CardHeader className="pt-4 pb-0"> {/* Removed border-b and border-gray-700 classes */}
           <CardTitle className="text-xl font-bold text-center text-blue-400 tracking-wider">
             Gradient Chart
           </CardTitle>
