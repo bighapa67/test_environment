@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { GradientChart } from "@/components/ui/gradient-chart";
+import { GlowingBorderButton } from "@/components/ui/glowing_border_button";
+
 
 export default function Home() {
   return (
     <div className="..."> {/* The "..." here is a placeholder for Tailwind's utility classes */}
       <main className="...">
+        <GlowingBorderButton>Click me</GlowingBorderButton>
         <GradientChart />
       </main>
     </div>
