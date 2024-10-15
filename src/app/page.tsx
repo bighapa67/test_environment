@@ -2,7 +2,8 @@ import Image from "next/image";
 import { GradientChart } from "@/components/ui/gradient-chart";
 import { GlowingBorderButton } from "@/components/ui/glowing_border_button";
 import { GlowingBorderButton2 } from "@/components/ui/glowing_border_button2";
-import { GlowingBorderButton3 } from "@/components/ui/glowing_border_button3";
+import GlowingBorderButton3 from "@/components/ui/glowing_border_button3";
+import GlowingBorderButton4 from "@/components/ui/glowing_border_button4";
 
 export default function Home() {
   return (
@@ -11,7 +12,10 @@ export default function Home() {
         <div className="flex flex-col items-center gap-8">
           <GlowingBorderButton>Version 1</GlowingBorderButton>
           <GlowingBorderButton2>Version 2</GlowingBorderButton2>
-          <GlowingBorderButton3>Version 3</GlowingBorderButton3>
+          <div className="flex justify-center gap-16">
+            <GlowingBorderButton3>Version 3</GlowingBorderButton3>
+            <GlowingBorderButton4>Version 4</GlowingBorderButton4>
+          </div>
         </div>
         <GradientChart />
       </main>
