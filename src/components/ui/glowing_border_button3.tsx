@@ -6,7 +6,7 @@ interface GradientBorderButtonProps {
 const GradientBorderButton3: React.FC<GradientBorderButtonProps> = ({ children, onClick }) => {
   return (
     <button
-      className="relative px-6 py-3 bg-[#1E1E1E] text-white rounded-lg overflow-hidden"
+      className="relative px-8 py-4 bg-[#1E1E1E] text-gray-500 rounded-lg overflow-hidden text-lg"
       onClick={onClick}
     >
       <span className="relative z-10">{children}</span>
