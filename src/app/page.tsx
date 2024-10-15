@@ -5,8 +5,8 @@ import { GlowingBorderButton } from "@/components/ui/glowing_border_button";
 
 export default function Home() {
   return (
-    <div className="..."> {/* The "..." here is a placeholder for Tailwind's utility classes */}
-      <main className="...">
+    <div className="min-h-screen bg-[#1c1c1c] p-8">
+      <main className="flex flex-col items-center gap-8">
         <GlowingBorderButton>Click me</GlowingBorderButton>
         <GradientChart />
       </main>
