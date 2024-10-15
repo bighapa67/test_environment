@@ -31,7 +31,10 @@ export function GlowingBorderButton3({
             style={{
               width: '33%',
               height: '50%',
-              boxShadow: 'inset 2px 1.5px 0 0 #4a90e2',
+              boxShadow: `
+              'inset 0 0 0 1px #333333',
+              'inset 2px 1.5px 0 0 #4a90e2'
+              `,
               borderRadius: '12px 0 0 0',
             }}
       >{children}</span>

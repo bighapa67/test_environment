@@ -15,7 +15,9 @@ export function GlowingBorderButton2({
 }: CustomButtonProps) {
   return (
     <button
-      className="relative bg-[#1c1c1c] text-gray-400 rounded-xl font-medium transition-all duration-300 hover:bg-[#252525] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+      className="flex items-center justify-center relative bg-[#1c1c1c] text-gray-500 
+        rounded-xl font-medium transition-all duration-300 hover:bg-[#252525] 
+        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
       onClick={onClick}
       style={{ 
         width, 
@@ -29,8 +31,8 @@ export function GlowingBorderButton2({
         className="absolute top-0 left-0 bg-[#1c1c1c]"
         style={{
           width: '33%',
-          height: '50%',
-          boxShadow: 'inset 2px 1.5px 0 0 #4a90e2',
+          height: '67%',
+          boxShadow: 'inset 1px 0.5px 0 0 #4a90e2',
           borderRadius: '12px 0 0 0',
         }}
       />
