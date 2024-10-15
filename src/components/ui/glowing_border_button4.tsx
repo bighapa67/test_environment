@@ -17,7 +17,9 @@ const GlowingBorderButton4: React.FC<GradientBorderButtonProps> = ({ children, o
       <div className="absolute inset-0">
         <div className="absolute inset-0 rounded-lg bg-[#1E1E1E]"></div>
         <div className="absolute inset-0 rounded-lg overflow-hidden">
-          <div className="absolute -inset-[1px] bg-gradient-to-tl from-transparent via-transparent to-[#3B82F6] group-hover:opacity-100 transition-opacity duration-300 ease-in-out group-hover:animate-pulse"></div>
+          <div className="absolute -inset-[1px] bg-gradient-to-tl 
+            from-transparent via-transparent to-[#3B82F6] 
+            group-hover:opacity-100 transition-opacity duration-300 ease-in-out group-hover:animate-pulse"></div>
         </div>
         <div className="absolute inset-[1px] rounded-lg bg-[#1E1E1E]"></div>
       </div>
