@@ -7,7 +7,7 @@ interface CustomButtonProps {
   height?: string
 }
 
-export function GlowingBorderButton({ 
+export function GlowingBorderButton3({ 
   children = 'How can Bolt help you today?', 
   onClick, 
   width = '400px', 
@@ -27,7 +27,14 @@ export function GlowingBorderButton({
         clipPath: 'inset(0 0 0 0 round 12px)',
       }}
     >
-      <span className="relative z-10 text-xl p-6 block text-left">{children}</span>
+      <span className="relative z-10 text-xl p-6 block text-left"
+            style={{
+              width: '33%',
+              height: '50%',
+              boxShadow: 'inset 2px 1.5px 0 0 #4a90e2',
+              borderRadius: '12px 0 0 0',
+            }}
+      >{children}</span>
     </button>
   )
 }
