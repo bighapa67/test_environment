@@ -1,24 +1,29 @@
 'use client'
-import { useState } from 'react';
-import GlowingBorderButton from '@/components/ui/glowing_border_button';
 
-export default function AiderPage() {
-  const [isBlueBackground, setIsBlueBackground] = useState(false);
+import React, { useState } from 'react'
+import GlowingBorderButton from '@/components/ui/glowing_border_button'
+
+const AiderPage: React.FC = () => {
+  const [isLightGray, setIsLightGray] = useState(true)
 
   const toggleBackground = () => {
-    setIsBlueBackground((prevState) => !prevState);
-  };
-
-  const backgroundClass = isBlueBackground
-    ? 'bg-gradient-to-r from-blue-200 via-blue-300 to-blue-500'
-    : 'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-500';
+    setIsLightGray(!isLightGray)
+  }
 
   return (
-    <div className={`${backgroundClass} min-h-screen flex flex-col items-center justify-center`}>
-      <h1 className="text-3xl font-bold mb-4">I'm using Aider LOCALLY-ish!!!</h1>
+    <div
+      className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-500 ${
+        isLightGray
+          ? 'bg-gradient-to-r from-gray-200 to-gray-300'
+          : 'bg-gradient-to-r from-orange-200 to-orange-300'
+      }`}
+    >
+      <h1 className="text-3xl font-bold mb-8">Aider Architect: LOCALLY-ish!!!</h1>
       <GlowingBorderButton onClick={toggleBackground}>
         Toggle Background
       </GlowingBorderButton>
     </div>
-  );
+  )
 }
+
+export default AiderPage
