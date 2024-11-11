@@ -31,3 +31,20 @@ export function GlowingBorderButton({
     </button>
   )
 }
+interface CustomButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  width?: string;
+  height?: string;
+  // ...other props
+}
+
+const GlowingBorderButton: React.FC<CustomButtonProps> = ({ children, onClick, width, height }) => {
+  return (
+    <button onClick={onClick} style={{ width, height }} className="...">
+      {children}
+    </button>
+  );
+};
+
+export default GlowingBorderButton;
