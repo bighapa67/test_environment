@@ -4,17 +4,17 @@ import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 
 const AiderPage: React.FC = () => {
-  const [isLightGray, setIsLightGray] = useState(true)
+  const [isDarkGray, setIsDarkGray] = useState(true)
 
   const toggleBackground = () => {
-    setIsLightGray(!isLightGray)
+    setIsDarkGray(!isDarkGray)
   }
 
   return (
     <div
       className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-500 ${
-        isLightGray
-          ? 'bg-gradient-to-r from-gray-200 to-gray-300'
+        isDarkGray
+          ? 'bg-gradient-to-r from-gray-800 to-gray-900'
           : 'bg-gradient-to-r from-orange-200 to-orange-300'
       }`}
     >
