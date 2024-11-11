@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react';
 import GlowingBorderButton from '@/components/ui/glowing_border_button';
 
