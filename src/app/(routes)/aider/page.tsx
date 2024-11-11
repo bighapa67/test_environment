@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import GlowingBorderButton from '@/components/ui/glowing_border_button'
+import { Button } from '@/components/ui/button'
 
 const AiderPage: React.FC = () => {
   const [isLightGray, setIsLightGray] = useState(true)
@@ -19,9 +19,9 @@ const AiderPage: React.FC = () => {
       }`}
     >
       <h1 className="text-3xl font-bold mb-8">Aider Architect: LOCALLY-ish!!!</h1>
-      <GlowingBorderButton onClick={toggleBackground}>
+      <Button onClick={toggleBackground} variant="outline">
         Toggle Background
-      </GlowingBorderButton>
+      </Button>
     </div>
   )
 }
