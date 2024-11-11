@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { GradientChart } from "@/components/ui/gradient-chart";
-import { GlowingBorderButton } from "@/components/ui/glowing_border_button";
+
+/* Default export method */
+import GlowingBorderButton from "@/components/ui/glowing_border_button";
+
+/* Named export method */
 import { GlowingBorderButton2 } from "@/components/ui/glowing_border_button2";
 import GlowingBorderButton3 from "@/components/ui/glowing_border_button3";
 import GlowingBorderButton4 from "@/components/ui/glowing_border_button4";

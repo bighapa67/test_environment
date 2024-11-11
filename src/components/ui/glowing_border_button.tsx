@@ -1,7 +1,5 @@
 'use client'
 
-'use client'
-
 import React from 'react';
 
 interface CustomButtonProps {
@@ -30,23 +28,6 @@ const GlowingBorderButton: React.FC<CustomButtonProps> = ({
       className="relative bg-[#1c1c1c] text-gray-400 rounded-xl font-medium transition-all duration-300 hover:bg-[#252525] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
     >
       <span className="relative z-10 text-xl p-6 block text-left">{children}</span>
-    </button>
-  );
-};
-
-export default GlowingBorderButton;
-interface CustomButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  width?: string;
-  height?: string;
-  // ...other props
-}
-
-const GlowingBorderButton: React.FC<CustomButtonProps> = ({ children, onClick, width, height }) => {
-  return (
-    <button onClick={onClick} style={{ width, height }} className="...">
-      {children}
     </button>
   );
 };

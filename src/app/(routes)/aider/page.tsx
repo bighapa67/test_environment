@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import GlowingBorderButton from '@/components/ui/glowing_border_button';
 
-const AiderPage = () => {
+export default function AiderPage() {
   const [isBlueBackground, setIsBlueBackground] = useState(false);
 
   const toggleBackground = () => {
@@ -21,6 +21,4 @@ const AiderPage = () => {
       </GlowingBorderButton>
     </div>
   );
-};
-
-export default AiderPage;
+}
