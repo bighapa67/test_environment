@@ -66,12 +66,12 @@ const CompactAddRow = ({ addRows, deleteLastRow }: ExtendedAddRowsProps) => (
   <div className="px-2 py-1 flex justify-between items-center">
     <button 
       onClick={() => addRows(1)}
-      className="text-xs text-gray-600 hover:text-gray-800"
+      className="text-xs text-gray-600 hover:text-gray-800 transition-all duration-150 hover:scale-110"
     >
       + Add row
     </button>
     <button 
-      className="text-xs text-gray-600 hover:text-red-600"
+      className="text-xs text-gray-600 hover:text-red-600 transition-all duration-150 hover:scale-110"
       onClick={() => deleteLastRow && deleteLastRow()}
     >
       - Delete row
