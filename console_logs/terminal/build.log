@@ -1,0 +1,46 @@
+
+[2025-01-07T03:54:26.550Z] Starting dev server
+[2025-01-07T03:54:26.861Z]    ▲ Next.js 15.0.3
+[2025-01-07T03:54:26.862Z]    - Local:        http://localhost:3000
+   - Environments: .env
+
+ ✓ Starting...
+[2025-01-07T03:54:27.948Z]  ✓ Ready in 1158ms
+[2025-01-07T03:54:28.808Z]  ○ Compiling /_not-found ...
+[2025-01-07T03:54:28.908Z]  ✓ Compiled /_not-found in 680ms (555 modules)
+[2025-01-07T03:54:29.020Z] ERROR:  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[2025-01-07T03:54:29.023Z]  GET /_next/static/webpack/3a82bb32eb64d387.webpack.hot-update.json 404 in 799ms
+[2025-01-07T03:54:29.071Z]  ✓ Compiled in 60ms (278 modules)
+[2025-01-07T03:54:29.229Z] ERROR:  ⨯ ./src/app/utils/server-logger.ts:1:1
+Module not found: Can't resolve 'fs'
+> 1 | import fs from 'fs';
+    | ^
+  2 | import path from 'path';
+  3 |
+  4 | const LOG_ROOT = './console_logs';
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/(debug)/error.tsx
+[2025-01-07T03:54:29.281Z] ERROR:  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[2025-01-07T03:54:29.285Z]  GET /dark-mode 500 in 227ms
+[2025-01-07T03:54:29.299Z]  GET /_next/static/webpack/3a82bb32eb64d387.webpack.hot-update.json 404 in 224ms
+[2025-01-07T03:54:29.575Z]  ○ Compiling /dark-mode ...
+[2025-01-07T03:54:30.205Z]  GET /dark-mode 500 in 902ms
+[2025-01-07T03:54:30.284Z] ERROR:  ⨯ ./src/app/utils/server-logger.ts:1:1
+Module not found: Can't resolve 'fs'
+> 1 | import fs from 'fs';
+    | ^
+  2 | import path from 'path';
+  3 |
+  4 | const LOG_ROOT = './console_logs';
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/(debug)/error.tsx
+[2025-01-07T03:54:30.378Z]  GET /dark-mode 500 in 148ms
+[2025-01-07T03:54:30.689Z]  ✓ Compiled /favicon.ico in 53ms (376 modules)
+[2025-01-07T03:54:30.693Z]  GET /favicon.ico 500 in 58ms
+[2025-01-07T03:54:31.541Z] ERROR: <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/kenjones/Code/test_environment/.next/cache/webpack/client-development-fallback/1.pack.gz_' -> '/Users/kenjones/Code/test_environment/.next/cache/webpack/client-development-fallback/1.pack.gz'
