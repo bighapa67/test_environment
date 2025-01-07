@@ -9,6 +9,44 @@ Focus on preserving both technical solutions and interaction patterns that prove
 The archive should be optimized for future context activation while remaining concise and well-structured.
 ```
 
+## Front Matter Guidelines
+The front matter section is critical for future searchability across hundreds of archives. Structure it to enable efficient filtering and pattern matching:
+
+```yaml
+---
+# Core identifiers for quick filtering
+significance: []          # Use 🌟(breakthrough), 🔗(connected), 🧩(insight), etc.
+intensity: 1-5           # Impact rating
+
+# Technical footprint
+technologies: []         # Specific tools, frameworks, languages used
+patterns: []            # Technical patterns encountered/applied
+problem_types: []       # Categories of challenges addressed
+
+# Solution characteristics
+primary_pattern: ""     # The main pattern that emerged
+challenge_type: ""      # Nature of the challenge (e.g., "seemingly-simple-but-architecturally-complex")
+solution_type: ""       # Nature of the solution (e.g., "architectural-rather-than-superficial")
+
+# Knowledge connections
+related_concepts:       # Connect problem/solution to broader domains
+  - domain: ""         # Area of software engineering
+    aspect: ""         # Specific aspect within that domain
+
+# For pattern matching
+keywords: []           # Specific technical terms for search matching
+---
+```
+
+When creating front matter:
+1. Think in terms of future searchability
+2. Include both specific technologies and general patterns
+3. Highlight surprising aspects of the problem/solution
+4. Connect to broader engineering concepts
+5. Use precise technical terms in keywords
+6. Consider how someone might search for this solution
+7. Include terms for both the problem space and solution space
+
 ## Archive Structure
 
 ### 1. Session Metadata
@@ -71,3 +109,19 @@ The archive should be optimized for future context activation while remaining co
 
 ## Example Section (Optional)
 Include a brief example of how each section should be filled out, demonstrating the desired level of detail and format. 
+
+## Session Narrative
+Include a technical story of the collaboration that:
+- Describes the main challenges and their surprising aspects
+- Details the journey through failed approaches to solutions
+- Highlights key realizations and breakthrough moments
+- Explains complex technical concepts in accessible language
+- Connects specific technical details to broader engineering principles
+- Emphasizes the learning value of the failed attempts
+- Concludes with key takeaways about component architecture, type systems, or other relevant domains
+
+The narrative should read like a technical case study, balancing storytelling with technical precision. Focus on:
+1. What made the problem more complex than it initially appeared
+2. How each failed attempt provided clues toward the solution
+3. What the final solution reveals about the underlying technology
+4. What broader engineering lessons were learned 
