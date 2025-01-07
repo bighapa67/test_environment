@@ -74,7 +74,7 @@ const CompactAddRow = ({ addRows, deleteLastRow }: ExtendedAddRowsProps) => (
       className="text-xs text-gray-600 hover:text-red-600"
       onClick={() => deleteLastRow && deleteLastRow()}
     >
-      Delete row
+      - Delete row
     </button>
   </div>
 );
@@ -97,15 +97,15 @@ export const DataGrid = ({
   const columns = [
     { 
       ...keyColumn('spread', rightAlignedTextColumn), 
-      title: 'Spread'
+      title: 'SpreadLevel'
     },
     { 
       ...keyColumn('max_waves', intColumn), 
-      title: 'Max Waves'
+      title: 'MaxWaves'
     },
     { 
       ...keyColumn('filled_waves', intColumn), 
-      title: 'Filled Waves'
+      title: 'FilledWaves'
     },
   ];
 
