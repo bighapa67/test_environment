@@ -44,7 +44,7 @@ const DebugPage = () => {
 
   // Fetch terminal logs
   const updateTerminalLogs = async () => {
-    const logs = serverLogger.getLogs();
+    const logs = await serverLogger.getLogs();
     setTerminalLogs(logs);
   };
 

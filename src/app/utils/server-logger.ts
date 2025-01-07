@@ -1,53 +1,90 @@
-import fs from 'fs';
-import path from 'path';
+type LogType = 'error' | 'build' | 'runtime';
 
-const LOG_ROOT = './console_logs';
-const TERMINAL_DIR = path.join(LOG_ROOT, 'terminal');
-const ERROR_LOG = path.join(TERMINAL_DIR, 'error.log');
-const BUILD_LOG = path.join(TERMINAL_DIR, 'build.log');
-const RUNTIME_LOG = path.join(TERMINAL_DIR, 'runtime.log');
+interface Session {
+  timestamp: string;
+  sessionId: string;
+  startedAt: number;
+}
 
-// Ensure directory structure exists
-[LOG_ROOT, TERMINAL_DIR].forEach(dir => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-});
+interface LogResponse {
+  logs: {
+    error: string;
+    build: string;
+    runtime: string;
+  };
+  session: Session | null;
+}
 
 export const serverLogger = {
-  error: (message: string, error?: any) => {
-    const timestamp = new Date().toISOString();
-    const logEntry = `${timestamp} | ${message}\n${error ? JSON.stringify(error, null, 2) + '\n' : ''}`;
-    fs.appendFileSync(ERROR_LOG, logEntry);
+  error: async (message: string, error?: any) => {
+    try {
+      await fetch('/api/logs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'error', message, error })
+      });
+    } catch (e) {
+      console.error('Failed to write error log:', e);
+    }
   },
 
-  build: (message: string) => {
-    const timestamp = new Date().toISOString();
-    const logEntry = `${timestamp} | ${message}\n`;
-    fs.appendFileSync(BUILD_LOG, logEntry);
+  build: async (message: string) => {
+    try {
+      await fetch('/api/logs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'build', message })
+      });
+    } catch (e) {
+      console.error('Failed to write build log:', e);
+    }
   },
 
-  runtime: (message: string) => {
-    const timestamp = new Date().toISOString();
-    const logEntry = `${timestamp} | ${message}\n`;
-    fs.appendFileSync(RUNTIME_LOG, logEntry);
+  runtime: async (message: string) => {
+    try {
+      await fetch('/api/logs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'runtime', message })
+      });
+    } catch (e) {
+      console.error('Failed to write runtime log:', e);
+    }
   },
 
   // Get all terminal logs
-  getLogs: () => {
-    return {
-      error: fs.existsSync(ERROR_LOG) ? fs.readFileSync(ERROR_LOG, 'utf8') : '',
-      build: fs.existsSync(BUILD_LOG) ? fs.readFileSync(BUILD_LOG, 'utf8') : '',
-      runtime: fs.existsSync(RUNTIME_LOG) ? fs.readFileSync(RUNTIME_LOG, 'utf8') : ''
-    };
+  getLogs: async () => {
+    try {
+      const response = await fetch('/api/logs');
+      const data: LogResponse = await response.json();
+      return data.logs;
+    } catch (e) {
+      console.error('Failed to read logs:', e);
+      return {
+        error: '',
+        build: '',
+        runtime: ''
+      };
+    }
   },
 
-  // Clear all logs
-  clear: () => {
-    [ERROR_LOG, BUILD_LOG, RUNTIME_LOG].forEach(file => {
-      if (fs.existsSync(file)) {
-        fs.writeFileSync(file, '');
-      }
-    });
+  // Get current session info
+  getSession: async () => {
+    try {
+      const response = await fetch('/api/logs');
+      const data: LogResponse = await response.json();
+      return data.session;
+    } catch (e) {
+      console.error('Failed to get session:', e);
+      return null;
+    }
+  },
+
+  // Check if this is a new session since last check
+  isNewSession: async (lastKnownTimestamp?: string) => {
+    const session = await serverLogger.getSession();
+    if (!session) return false;
+    if (!lastKnownTimestamp) return true;
+    return new Date(session.timestamp) > new Date(lastKnownTimestamp);
   }
 }; 

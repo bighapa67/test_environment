@@ -12,7 +12,7 @@ export default function DebugError({
 }) {
   useEffect(() => {
     // Log the error
-    serverLogger.error('Debug route error:', {
+    serverLogger.error('Debug route error', {
       message: error.message,
       stack: error.stack,
       digest: error.digest

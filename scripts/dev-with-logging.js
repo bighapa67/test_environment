@@ -1,10 +1,12 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const LOG_ROOT = './console_logs';
 const TERMINAL_DIR = path.join(LOG_ROOT, 'terminal');
 const BUILD_LOG = path.join(TERMINAL_DIR, 'build.log');
+const SESSION_MARKER = path.join(TERMINAL_DIR, 'session.marker');
 
 // Ensure directory structure exists
 [LOG_ROOT, TERMINAL_DIR].forEach(dir => {
@@ -13,8 +15,25 @@ const BUILD_LOG = path.join(TERMINAL_DIR, 'build.log');
   }
 });
 
+// Generate session marker
+const createSessionMarker = () => {
+  const timestamp = new Date().toISOString();
+  const sessionId = crypto.randomBytes(4).toString('hex');
+  const marker = {
+    timestamp,
+    sessionId,
+    startedAt: Date.now()
+  };
+  
+  fs.writeFileSync(SESSION_MARKER, JSON.stringify(marker, null, 2));
+  return marker;
+};
+
 // Clear previous logs
 fs.writeFileSync(BUILD_LOG, '');
+
+// Create new session marker
+const session = createSessionMarker();
 
 // Start Next.js dev server and capture output
 const devProcess = spawn('next', ['dev'], {
@@ -22,9 +41,9 @@ const devProcess = spawn('next', ['dev'], {
   shell: true
 });
 
-// Log timestamp
-const timestamp = new Date().toISOString();
-fs.appendFileSync(BUILD_LOG, `\n[${timestamp}] Starting dev server\n`);
+// Log session start
+const sessionStartLog = `\n[${session.timestamp}] Starting new debug session ${session.sessionId}\n`;
+fs.appendFileSync(BUILD_LOG, sessionStartLog);
 
 // Capture stdout
 devProcess.stdout.on('data', (data) => {
