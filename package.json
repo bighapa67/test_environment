@@ -4,15 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:debug": "node scripts/dev-with-logging.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "@tanstack/react-table": "^8.20.6",
     "@types/recharts": "^1.8.29",
+    "class-variance-authority": "^0.7.0",
     "date-fns": "^4.1.0",
-    "next": "14.2.13",
+    "next": "^15.0.3",
     "react": "^18",
+    "react-datasheet-grid": "^4.11.5",
     "react-dom": "^18",
     "recharts": "^2.13.0",
     "tailwind-merge": "^2.5.2"
@@ -21,9 +26,11 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "css-loader": "^7.1.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",
+    "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

@@ -50,9 +50,9 @@ const data = [
 
 export function GradientChart() {
   return (
-    <div className="w-full p-4 bg-gray-900 min-h-screen flex items-center justify-center">
-      <Card className="w-full max-w-5xl bg-gray-800 border-gray-700 shadow-lg">
-        <CardHeader className="pt-4 pb-0"> {/* Removed border-b and border-gray-700 classes */}
+    <div className="w-full max-w-[2400px] mx-auto my-4">
+      <Card className="w-full bg-gray-800 border-gray-700 shadow-lg">
+        <CardHeader className="pt-4 pb-0">
           <CardTitle className="text-xl font-bold text-center text-blue-400 tracking-wider">
             Gradient Chart
           </CardTitle>
@@ -65,11 +65,11 @@ export function GradientChart() {
                   ...item,
                   date: parseISO(item.date)
                 }))} 
-                margin={{ top: 5, right: 5, left: 5, bottom: 5}}
+                margin={{ top: 5, right: 20, left: 20, bottom: 5}}
               >
                 <defs>
                   <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
+                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2}/>
                     <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
                   </linearGradient>
                 </defs>

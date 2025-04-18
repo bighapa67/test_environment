@@ -1,0 +1,31 @@
+
+[2025-01-07T05:40:13.167Z] Starting new debug session 102b92b1
+[2025-01-07T05:40:13.504Z]    ▲ Next.js 15.0.3
+[2025-01-07T05:40:13.505Z]    - Local:        http://localhost:3000
+   - Environments: .env
+
+ ✓ Starting...
+[2025-01-07T05:40:14.477Z]  ✓ Ready in 1050ms
+[2025-01-07T05:40:16.058Z]  ✓ Compiled /api/logs in 249ms (319 modules)
+[2025-01-07T05:40:16.121Z]  GET /api/logs 200 in 319ms
+[2025-01-07T05:40:21.800Z]  GET /api/logs 200 in 7ms
+[2025-01-07T05:40:27.810Z]  GET /api/logs 200 in 11ms
+[2025-01-07T05:40:30.468Z]  GET /api/logs 200 in 6ms
+[2025-01-07T05:40:32.835Z]  GET /api/logs 200 in 13ms
+[2025-01-07T05:40:33.543Z]  ○ Compiling /debug-datasheet-grid ...
+[2025-01-07T05:40:33.657Z]  ✓ Compiled /debug-datasheet-grid in 618ms (699 modules)
+[2025-01-07T05:40:33.742Z] DataGrid: rendering with value length: 10
+[2025-01-07T05:40:33.812Z]  GET /debug-datasheet-grid 200 in 785ms
+[2025-01-07T05:40:33.833Z]  ✓ Compiled in 86ms (328 modules)
+[2025-01-07T05:40:34.177Z]  GET /api/logs 200 in 11ms
+[2025-01-07T05:40:34.181Z]  GET /api/logs 200 in 3ms
+[2025-01-07T05:40:39.214Z]  GET /api/logs 200 in 5ms
+[2025-01-07T05:40:39.220Z]  GET /api/logs 200 in 3ms
+[2025-01-07T05:40:44.229Z]  GET /api/logs 200 in 7ms
+[2025-01-07T05:40:44.239Z]  GET /api/logs 200 in 4ms
+[2025-01-07T05:40:49.241Z]  GET /api/logs 200 in 6ms
+[2025-01-07T05:40:49.261Z]  GET /api/logs 200 in 5ms
+[2025-01-07T05:40:54.253Z]  GET /api/logs 200 in 6ms
+[2025-01-07T05:40:54.274Z]  GET /api/logs 200 in 6ms
+[2025-01-07T05:40:59.267Z]  GET /api/logs 200 in 5ms
+[2025-01-07T05:40:59.286Z]  GET /api/logs 200 in 5ms
