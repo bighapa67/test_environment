@@ -1,4 +1,3 @@
-
 '''
 The purpose of this file is to create a "consumer" on a particular port.
 This is necessary to test whether or not a port opened via Spectrum (or probably any other router/service) is actually accessible

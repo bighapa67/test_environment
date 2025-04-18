@@ -3,6 +3,10 @@
 # virtual environment
 .venv/
 
+# Python cache
+__pycache__/
+*.pyc
+
 # dependencies
 /node_modules
 /.pnp
